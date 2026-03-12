@@ -22,7 +22,7 @@ What the site needs to communicate:
 - sports club in L'Aquila
 - Padel courts
 - Tennis courts
-- Beach Tennis in the summer
+- Beach Tennis/Volley in the summer
 - phone number
 - email
 - Instagram
@@ -70,7 +70,7 @@ The site should feel close to the existing website in information architecture, 
 A good structure is:
 
 1. hero with club name, image, and clear booking / contact CTA
-2. sports offered: Padel, Tennis, Beach Tennis (summer)
+2. sports offered: Padel, Tennis, Beach Tennis/volley (summer)
 3. contacts
 4. address / map
 
@@ -146,7 +146,7 @@ Good examples:
 
 - Padel
 - Tennis
-- Beach Tennis in estate
+- Beach Tennis/Volley in estate
 - Centro sportivo a L'Aquila
 
 Bad examples:

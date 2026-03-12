@@ -1,19 +1,16 @@
-<header class="flex justify-between items-center gap-4 py-4 max-md:flex-col max-md:items-start max-md:gap-2.5">
+<header class="flex justify-between items-center gap-4 py-4">
   <a class="flex gap-3 items-center no-underline" href="#home">
     <img class="w-[50px] h-[50px] object-contain" src="/images/logo-cc.png" alt="Logo Contrada Cavalli">
-    <div>
-      <span class="block font-heading text-2xl font-normal tracking-wide">Contrada Cavalli</span>
-      <span class="block text-muted text-[0.92rem] leading-none font-sans">Centro sportivo a L'Aquila</span>
-    </div>
+    <span class="font-heading text-2xl font-normal tracking-wide">Contrada Cavalli</span>
   </a>
-  <div class="flex gap-2 flex-wrap items-center">
+  <div class="flex gap-2 items-center">
     <a class="btn !p-3" href="{{ site.Params.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
     </a>
     <a class="btn !p-3" href="{{ site.Params.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
     </a>
-    <a class="btn" href="tel:{{ site.Params.contact_phone }}">{{ site.Params.contact_phone_short }}</a>
-    <a class="btn-olive" href="{{ site.Params.playtomic_url }}" target="_blank" rel="noopener">Prenota</a>
+    <a class="btn max-md:hidden" href="tel:{{ site.Params.contact_phone }}">{{ site.Params.contact_phone }}</a>
+    <a class="btn-olive max-md:hidden" href="{{ site.Params.playtomic_url }}" target="_blank" rel="noopener">Prenota</a>
   </div>
 </header>

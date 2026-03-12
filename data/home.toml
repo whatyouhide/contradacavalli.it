@@ -9,6 +9,6 @@ text = "Campi coperti e scoperti"
 image = "/images/padel.jpg"
 
 [[services]]
-name = "Beach Tennis"
+name = "Beach"
 text = "In estate"
 image = "/images/beach.jpg"
