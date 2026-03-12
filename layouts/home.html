@@ -1,0 +1,49 @@
+{{ define "main" }} {{ $home := site.Data.home }}
+
+<section id="home" class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-4 mt-1.5 lg:min-h-[calc(100vh-6rem)]">
+    <div class="py-4 flex flex-col self-stretch">
+        <p class="text-olive font-bold text-xs leading-none uppercase tracking-[0.16em]">Centro Sportivo</p>
+        <h1 class="mt-3 font-heading font-normal text-[clamp(3rem,6.5vw,5.2rem)] leading-[0.92] tracking-wide max-w-[14ch]">{{ site.Params.hero_text }}</h1>
+        <p class="mt-3 font-heading text-[1.4rem] tracking-wide">Contrada Cavalli</p>
+        <div class="mt-1 text-muted text-[1.05rem] leading-relaxed tracking-wide max-w-[26rem]">Tennis &#183; Padel &#183; Beach Tennis</div>
+        <div class="mt-5 flex gap-3 flex-wrap">
+            <a
+                class="btn-dark"
+                href="{{ site.Params.playtomic_url }}"
+                target="_blank"
+                rel="noopener"
+                >Prenota su Playtomic</a
+            >
+            <a class="btn" href="tel:{{ site.Params.contact_phone }}">Chiama</a>
+        </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_0.76fr] gap-4 self-end">
+        <div class="relative rounded-card overflow-hidden shadow-[0_20px_50px_rgba(23,21,19,0.08)] h-[320px] lg:h-[520px]">
+            <img class="w-full h-full object-cover" src="/images/padel.jpg" alt="Campo da padel Contrada Cavalli" />
+            <div class="absolute bottom-0 left-0 right-0 px-5 py-5 bg-gradient-to-t from-black/55 to-transparent text-white">
+                <h3 class="font-heading text-[1.6rem] tracking-wide text-white">Padel</h3>
+                <p class="mt-0.5 text-[0.85rem] leading-snug text-white/85 line-clamp-2">{{ site.Params.service_descriptions.padel }}</p>
+            </div>
+        </div>
+        <div class="grid grid-rows-2 gap-4">
+            <div class="relative rounded-card overflow-hidden shadow-[0_20px_50px_rgba(23,21,19,0.08)] min-h-[220px]">
+                <img class="w-full h-full object-cover" src="/images/tennis.jpg" alt="Campo da tennis Contrada Cavalli" />
+                <div class="absolute bottom-0 left-0 right-0 px-5 py-5 bg-gradient-to-t from-black/55 to-transparent text-white">
+                    <h3 class="font-heading text-[1.6rem] tracking-wide text-white">Tennis</h3>
+                    <p class="mt-0.5 text-[0.85rem] leading-snug text-white/85 line-clamp-2">{{ site.Params.service_descriptions.tennis }}</p>
+                </div>
+            </div>
+            <div class="relative rounded-card overflow-hidden shadow-[0_20px_50px_rgba(23,21,19,0.08)] min-h-[220px]">
+                <img class="w-full h-full object-cover" src="/images/beach.jpg" alt="Beach tennis Contrada Cavalli" />
+                <div class="absolute bottom-0 left-0 right-0 px-5 py-5 bg-gradient-to-t from-black/55 to-transparent text-white">
+                    <h3 class="font-heading text-[1.6rem] tracking-wide text-white">Beach Tennis</h3>
+                    <p class="mt-0.5 text-[0.85rem] leading-snug text-white/85 line-clamp-2">{{ site.Params.service_descriptions.beach_volley }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ end }}

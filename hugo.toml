@@ -1,3 +1,42 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Project'
+baseURL = 'https://contradacavalli.it/'
+languageCode = 'it-IT'
+title = 'Contrada Cavalli'
+defaultContentLanguage = 'it'
+
+[params]
+  description = 'Villaggio Sportivo Contrada Cavalli: Tennis, Padel, Beach Volley.'
+  playtomic_url = 'https://playtomic.com/clubs/contrada-cavalli'
+  contact_email = 'info@contradacavalli.it'
+  contact_phone = '+39 392 11 00 110'
+  contact_phone_short = '392 11 00 110'
+  address = "Strada Vicinale dell'Aterno, 32 • L'Aquila (67100)"
+  maps_url = 'https://maps.app.goo.gl/aouJpb88MfuG2Bfk7'
+  instagram = 'https://www.instagram.com/contradacavalli/'
+  facebook = 'https://www.facebook.com/contradacavalli/'
+  hero_text = 'I tempi cambiano, i campi da padel si coprono.'
+
+  [params.service_descriptions]
+    tennis = 'Due campi in erba sintentica, outdoor.'
+    padel = 'Due campi coperti e riscaldati.'
+    beach_volley = 'Campo outdoor, solo per il periodo estivo.'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    url = '#home'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Servizi'
+    url = '#servizi'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Dove siamo'
+    url = '#dove-siamo'
+    weight = 30
+
+  [[menus.main]]
+    name = 'Contatti'
+    url = '#contatti'
+    weight = 40

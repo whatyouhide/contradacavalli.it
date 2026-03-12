@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top right, rgba(79, 90, 56, 0.08), transparent 24%),
+      theme('colors.bg');
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+    line-height: 1;
+  }
+
+  p { margin: 0; }
+  a { color: inherit; }
+  img { display: block; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block no-underline rounded-xl py-3.5 px-4 font-bold text-[0.92rem] leading-none border border-line text-ink;
+    background: rgba(255, 255, 255, 0.45);
+  }
+
+  .btn:hover,
+  .btn:focus-visible {
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .btn-dark {
+    @apply btn bg-ink text-white border-ink;
+  }
+
+  .btn-dark:hover,
+  .btn-dark:focus-visible {
+    @apply bg-ink-light;
+  }
+
+  .btn-olive {
+    @apply btn text-white bg-olive border-olive;
+  }
+
+  .btn-olive:hover,
+  .btn-olive:focus-visible {
+    background: #3e4a2b;
+  }
+
+  .btn-sm {
+    @apply py-2.5 px-3.5 text-[0.85rem] font-semibold;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

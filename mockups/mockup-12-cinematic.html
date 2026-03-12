@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 12 — Full-Bleed Cinematic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #fff;
+      --muted: rgba(255,255,255,0.6);
+      --dark: #0c0c0c;
+      --dark-card: #161616;
+      --line: rgba(255,255,255,0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      background: var(--dark);
+      color: var(--ink);
+      font-family: 'Syne', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Direction label --- */
+    .dir {
+      position: fixed;
+      top: 1rem;
+      left: 1.2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      z-index: 20;
+      mix-blend-mode: difference;
+    }
+
+    /* --- Full-bleed hero --- */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          rgba(12,12,12,0.15) 0%,
+          rgba(12,12,12,0.0) 30%,
+          rgba(12,12,12,0.4) 65%,
+          rgba(12,12,12,0.92) 100%
+        );
+    }
+
+    .hero-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hero-brand img {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .hero-brand span {
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-nav {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .hero-nav a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.6rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: background 0.2s;
+    }
+
+    .hero-nav a:hover { background: rgba(255,255,255,0.18); }
+
+    .hero-nav a.cta {
+      background: #fff;
+      color: var(--dark);
+    }
+
+    .hero-nav a.cta:hover { background: rgba(255,255,255,0.9); }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 1.5rem 3.5rem;
+      max-width: 900px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(3.5rem, 10vw, 7.5rem);
+      font-weight: 400;
+      line-height: 0.9;
+      font-style: italic;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      font-weight: 400;
+      max-width: 28rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      transition: all 0.2s;
+    }
+
+    .hero-cta .primary {
+      background: #fff;
+      color: var(--dark);
+    }
+
+    .hero-cta .primary:hover { box-shadow: 0 8px 30px rgba(255,255,255,0.2); }
+
+    .hero-cta .ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .hero-cta .ghost:hover { border-color: rgba(255,255,255,0.6); }
+
+    /* --- Image strips --- */
+    .strips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .strip {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+
+    .strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .strip:hover img { transform: scale(1.04); }
+
+    .strip::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 50%,
+        rgba(12,12,12,0.6) 100%
+      );
+    }
+
+    .strip .strip-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1.2rem;
+      z-index: 2;
+    }
+
+    .strip-label h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .strip-label span {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* --- Info section --- */
+    .info-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .info-block {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid var(--line);
+    }
+
+    .info-block:last-child { border-right: none; }
+
+    .info-block h3 {
+      font-family: 'Geist Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .info-row {
+      display: block;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s, padding-left 0.2s;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+    a.info-row:hover { color: rgba(255,255,255,0.7); padding-left: 0.3rem; }
+
+    .info-row small {
+      display: block;
+      font-family: 'Geist Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.15rem;
+    }
+
+    /* --- Footer --- */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    footer span {
+      font-family: 'Geist Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: background 0.2s;
+    }
+
+    footer a:hover { background: rgba(255,255,255,0.15); }
+
+    /* --- Responsive --- */
+    @media (max-width: 700px) {
+      .strips,
+      .info-section {
+        grid-template-columns: 1fr;
+      }
+
+      .info-block { border-right: none; border-bottom: 1px solid var(--line); }
+      .info-block:last-child { border-bottom: none; }
+
+      .hero-nav { display: none; }
+      .hero-content h1 { font-size: clamp(3rem, 12vw, 5rem); }
+    }
+  </style>
+</head>
+<body>
+  <p class="dir">12 / Cinematic</p>
+
+  <section class="hero">
+    <img src="../static/images/padel.jpg" alt="Campo da padel, Contrada Cavalli">
+
+    <div class="hero-top">
+      <div class="hero-brand">
+        <img src="../static/images/logo-cc.png" alt="Logo">
+        <span>Contrada Cavalli</span>
+      </div>
+      <nav class="hero-nav">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="tel:+393921100110">Chiama</a>
+        <a class="cta" href="#">Prenota</a>
+      </nav>
+    </div>
+
+    <div class="hero-content">
+      <h1>Contrada Cavalli</h1>
+      <p>Centro sportivo a L'Aquila. Padel e tennis tutto l'anno. Beach tennis in estate.</p>
+      <div class="hero-cta">
+        <a class="primary" href="#">Prenota su Playtomic</a>
+        <a class="ghost" href="tel:+393921100110">Chiama</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="strips">
+    <div class="strip">
+      <img src="../static/images/tennis.jpg" alt="Tennis">
+      <div class="strip-label">
+        <h2>Tennis</h2>
+      </div>
+    </div>
+    <div class="strip">
+      <img src="../static/images/beach.jpg" alt="Beach Tennis">
+      <div class="strip-label">
+        <h2>Beach Tennis</h2>
+        <span>Estate</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="info-block">
+      <h3>Contatti</h3>
+      <a class="info-row" href="tel:+393921100110">
+        <small>Telefono</small>
+        +39 392 11 00 110
+      </a>
+      <a class="info-row" href="mailto:info@contradacavalli.it">
+        <small>Email</small>
+        info@contradacavalli.it
+      </a>
+      <a class="info-row" href="#">Instagram</a>
+      <a class="info-row" href="#">Facebook</a>
+    </div>
+    <div class="info-block">
+      <h3>Dove siamo</h3>
+      <div class="info-row">
+        <small>Indirizzo</small>
+        Strada Vicinale Fontana 27, 67100 L'Aquila
+      </div>
+      <a class="info-row" href="#">Apri mappa</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Contrada Cavalli — L'Aquila</span>
+    <a href="#">Prenota su Playtomic</a>
+  </footer>
+</body>
+</html>

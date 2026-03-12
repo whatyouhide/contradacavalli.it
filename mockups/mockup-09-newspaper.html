@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup 09 — Newspaper Broadsheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4f1eb;
+      --ink: #1a1a18;
+      --muted: #6b6860;
+      --rule: #1a1a18;
+      --rule-light: rgba(26, 26, 24, 0.15);
+      --accent: #c0392b;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .broadsheet {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+
+    /* --- Masthead --- */
+    .masthead {
+      text-align: center;
+      padding: 1.2rem 0 0.8rem;
+      border-bottom: 3px double var(--rule);
+    }
+
+    .masthead .dateline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+      line-height: 0.95;
+      margin: 0.3rem 0 0.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .masthead .subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* --- Toolbar --- */
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule-light);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-links {
+      display: flex;
+      gap: 1.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar-links a {
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .toolbar-links a:hover { color: var(--ink); }
+
+    .toolbar .cta-book {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: var(--ink);
+      padding: 0.6rem 1.2rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .toolbar .cta-book:hover { background: var(--accent); }
+
+    /* --- Label --- */
+    .direction-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.7rem 0 0;
+    }
+
+    /* --- Front Page Grid --- */
+    .front {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 0;
+      margin-top: 0.8rem;
+      border-top: 2px solid var(--rule);
+    }
+
+    .col {
+      padding: 1rem;
+      border-right: 1px solid var(--rule-light);
+    }
+
+    .col:last-child { border-right: none; }
+
+    /* --- Left Column --- */
+    .col-left h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .sport-item {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--rule-light);
+    }
+
+    .sport-item:last-child { border-bottom: none; }
+
+    .sport-item h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .sport-item p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* --- Center Column --- */
+    .col-center {
+      padding: 1rem 1.4rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%) contrast(1.05);
+    }
+
+    .caption {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-top: 0.8rem;
+      letter-spacing: -0.01em;
+    }
+
+    .deck {
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+
+    .center-cta {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: var(--ink);
+      padding: 0.75rem 1.6rem;
+      transition: background 0.2s;
+    }
+
+    .center-cta:hover { background: var(--accent); }
+
+    /* --- Right Column --- */
+    .col-right h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-row {
+      display: block;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule-light);
+      text-decoration: none;
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row:hover { color: var(--accent); }
+
+    .contact-label {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.1rem;
+      font-weight: 400;
+    }
+
+    .where-section {
+      margin-top: 1.2rem;
+      padding-top: 0.8rem;
+      border-top: 2px solid var(--rule);
+    }
+
+    .where-section h2 {
+      margin-bottom: 0.4rem;
+    }
+
+    .where-section p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .where-section a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      color: var(--ink);
+      border-bottom: 1.5px solid var(--ink);
+      padding-bottom: 0.1rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .where-section a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* --- Secondary images strip --- */
+    .secondary-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 0.8rem;
+      border-top: 2px solid var(--rule);
+    }
+
+    .strip-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--rule-light);
+    }
+
+    .strip-item + .strip-item {
+      border-left: 1px solid var(--rule-light);
+    }
+
+    .strip-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%) contrast(1.05);
+      min-height: 180px;
+    }
+
+    .strip-item .strip-copy {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .strip-copy h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .strip-copy p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+      line-height: 1.45;
+    }
+
+    /* --- Footer --- */
+    .paper-footer {
+      margin-top: 1.5rem;
+      padding-top: 0.6rem;
+      border-top: 3px double var(--rule);
+      text-align: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 900px) {
+      .front {
+        grid-template-columns: 1fr;
+      }
+
+      .col { border-right: none; border-bottom: 1px solid var(--rule-light); }
+      .col:last-child { border-bottom: none; }
+
+      .secondary-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .strip-item + .strip-item { border-left: none; }
+    }
+
+    @media (max-width: 600px) {
+      .strip-item { grid-template-columns: 1fr; }
+      .strip-item img { min-height: 200px; }
+      .broadsheet { padding: 1rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="broadsheet">
+    <p class="direction-label">09 / Newspaper</p>
+
+    <header class="masthead">
+      <p class="dateline">L'Aquila — Centro Sportivo</p>
+      <h1>Contrada Cavalli</h1>
+      <p class="subtitle">Padel · Tennis · Beach Tennis</p>
+    </header>
+
+    <nav class="toolbar">
+      <div class="toolbar-links">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="tel:+393921100110">+39 392 11 00 110</a>
+        <a href="mailto:info@contradacavalli.it">Email</a>
+      </div>
+      <a class="cta-book" href="#">Prenota su Playtomic</a>
+    </nav>
+
+    <section class="front">
+      <div class="col col-left">
+        <h2>I nostri sport</h2>
+        <div class="sport-item">
+          <h3>Padel</h3>
+        </div>
+        <div class="sport-item">
+          <h3>Tennis</h3>
+        </div>
+        <div class="sport-item">
+          <h3>Beach Tennis</h3>
+          <p>Stagione estiva</p>
+        </div>
+      </div>
+
+      <div class="col col-center">
+        <img class="hero-image" src="../static/images/padel.jpg" alt="Campo da padel, Contrada Cavalli">
+        <p class="caption">Vista del campo da padel — Contrada Cavalli, L'Aquila</p>
+        <h2 class="headline">Centro sportivo a L'Aquila</h2>
+        <p class="deck">Padel e tennis tutto l'anno. Beach tennis nella stagione estiva.</p>
+        <a class="center-cta" href="#">Prenota su Playtomic</a>
+      </div>
+
+      <div class="col col-right">
+        <h2>Contatti</h2>
+        <a class="contact-row" href="tel:+393921100110">
+          <span class="contact-label">Telefono</span>
+          +39 392 11 00 110
+        </a>
+        <a class="contact-row" href="mailto:info@contradacavalli.it">
+          <span class="contact-label">Email</span>
+          info@contradacavalli.it
+        </a>
+        <a class="contact-row" href="#">
+          <span class="contact-label">Social</span>
+          Instagram
+        </a>
+        <a class="contact-row" href="#">
+          <span class="contact-label">&nbsp;</span>
+          Facebook
+        </a>
+
+        <div class="where-section">
+          <h2>Dove siamo</h2>
+          <p>Strada Vicinale Fontana 27<br>67100 L'Aquila</p>
+          <a href="#">Apri mappa</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secondary-strip">
+      <div class="strip-item">
+        <img src="../static/images/tennis.jpg" alt="Campo da tennis">
+        <div class="strip-copy">
+          <h3>Tennis</h3>
+          <p>Tutto l'anno</p>
+        </div>
+      </div>
+      <div class="strip-item">
+        <img src="../static/images/beach.jpg" alt="Beach tennis">
+        <div class="strip-copy">
+          <h3>Beach Tennis</h3>
+          <p>Estate</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="paper-footer">
+      Contrada Cavalli — Strada Vicinale Fontana 27, 67100 L'Aquila
+    </footer>
+  </div>
+</body>
+</html>
