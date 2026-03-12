@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         heading: ['"Bebas Neue"', 'Arial', 'sans-serif'],
-        sans: ['Arial', 'Helvetica', 'sans-serif'],
+        sans: ['"DM Sans"', 'Arial', 'Helvetica', 'sans-serif'],
       },
       borderRadius: {
         card: '28px',
