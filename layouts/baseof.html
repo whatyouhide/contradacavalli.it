@@ -7,7 +7,7 @@
   <a class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:text-white focus:px-2.5 focus:py-1.5" href="#main-content">Vai al contenuto</a>
   <div class="max-w-[1200px] w-[calc(100%-2rem)] mx-auto pt-4 flex-1 flex flex-col">
     {{ partial "header.html" . }}
-    <main id="main-content" class="pb-8 lg:pb-10">
+    <main id="main-content" class="pb-8 lg:pb-10 {{ if .IsHome }}flex-1 flex flex-col{{ end }}">
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}
