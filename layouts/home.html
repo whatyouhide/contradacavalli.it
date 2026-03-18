@@ -1,4 +1,4 @@
-{{ define "main" }} {{ $home := site.Data.home }}
+{{ define "main" }}
 
 <section id="home" class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-4">
     <div class="py-4 flex flex-col justify-center">
@@ -21,7 +21,7 @@
 
     <div class="flex flex-col gap-3 self-center">
         <div class="relative rounded-card overflow-hidden shadow-[0_20px_50px_rgba(23,21,19,0.08)] h-[250px]">
-            <img class="w-full h-full object-cover" src="/images/padel.jpg" alt="Campo da padel Contrada Cavalli" />
+            <img class="w-full h-full object-cover" src="/images/padel.webp" alt="Campo da padel Contrada Cavalli" />
             <div class="absolute bottom-3 left-3 right-3 px-4 py-3 rounded-2xl backdrop-blur-md bg-black/30 text-white">
                 <h3 class="font-heading text-[1.4rem] tracking-wide text-white">Padel</h3>
                 <p class="mt-0.5 text-[0.85rem] leading-snug text-white/85 line-clamp-2">{{ site.Params.service_descriptions.padel }}</p>
