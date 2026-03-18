@@ -4,14 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#ebe4d9',
-        paper: '#f9f5ee',
-        ink: '#171513',
-        'ink-light': '#2e2b27',
-        muted: '#6c655d',
-        line: 'rgba(23, 21, 19, 0.12)',
-        olive: '#4f5a38',
-        'olive-dark': '#3e4a2b',
+        bg: 'rgb(var(--color-bg) / <alpha-value>)',
+        paper: 'rgb(var(--color-paper) / <alpha-value>)',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        'ink-light': 'rgb(var(--color-ink-light) / <alpha-value>)',
+        muted: 'rgb(var(--color-muted) / <alpha-value>)',
+        line: 'rgb(var(--color-line) / <alpha-value>)',
+        olive: 'rgb(var(--color-olive) / <alpha-value>)',
+        'olive-dark': 'rgb(var(--color-olive-dark) / <alpha-value>)',
       },
       fontFamily: {
         heading: ['"Bebas Neue"', 'Arial', 'sans-serif'],

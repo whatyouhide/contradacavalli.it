@@ -3,13 +3,48 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light dark;
+    --color-bg: 235 228 217;
+    --color-paper: 249 245 238;
+    --color-ink: 23 21 19;
+    --color-ink-light: 46 43 39;
+    --color-muted: 108 101 93;
+    --color-line: 23 21 19 / 0.12;
+    --color-olive: 79 90 56;
+    --color-olive-dark: 62 74 43;
+    --button-surface: 255 255 255 / 0.45;
+    --button-surface-hover: 255 255 255 / 0.7;
+    --surface-shadow: 23 21 19 / 0.08;
+    --surface-overlay: 0 0 0 / 0.3;
+    --surface-overlay-text: 255 255 255 / 0.85;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: 24 27 24;
+      --color-paper: 34 38 34;
+      --color-ink: 242 236 227;
+      --color-ink-light: 217 209 197;
+      --color-muted: 177 169 157;
+      --color-line: 242 236 227 / 0.14;
+      --color-olive: 126 141 94;
+      --color-olive-dark: 108 123 79;
+      --button-surface: 255 255 255 / 0.06;
+      --button-surface-hover: 255 255 255 / 0.12;
+      --surface-shadow: 0 0 0 / 0.25;
+      --surface-overlay: 9 10 9 / 0.46;
+      --surface-overlay-text: 255 255 255 / 0.82;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
     background:
-      radial-gradient(circle at top right, rgba(79, 90, 56, 0.08), transparent 24%),
+      radial-gradient(circle at top right, rgb(var(--color-olive) / 0.16), transparent 24%),
       theme('colors.bg');
   }
 
@@ -26,16 +61,16 @@
 @layer components {
   .btn {
     @apply inline-block no-underline rounded-xl py-3.5 px-4 font-bold text-[0.92rem] leading-none tracking-wide border border-line text-ink;
-    background: rgba(255, 255, 255, 0.45);
+    background: rgb(var(--button-surface));
   }
 
   .btn:hover,
   .btn:focus-visible {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgb(var(--button-surface-hover));
   }
 
   .btn-dark {
-    @apply btn bg-ink text-white border-ink;
+    @apply btn bg-ink text-bg border-ink;
   }
 
   .btn-dark:hover,
@@ -55,7 +90,6 @@
   .btn-sm {
     @apply py-2.5 px-3.5 text-[0.85rem] font-semibold;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
