@@ -15,7 +15,7 @@ defaultContentLanguage = 'it'
   maps_url = 'https://maps.app.goo.gl/aouJpb88MfuG2Bfk7'
   instagram = 'https://www.instagram.com/contradacavalli/'
   facebook = 'https://www.facebook.com/contradacavalli/'
-  hero_text = 'Padel al coperto, tennis outdoor.'
+  hero_text = 'Tennis outdoor, padel al coperto.'
 
   [params.service_descriptions]
     tennis = 'Due campi in erba sintentica, outdoor.'
