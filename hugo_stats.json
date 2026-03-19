@@ -3,6 +3,7 @@
     "tags": [
       "a",
       "body",
+      "button",
       "div",
       "footer",
       "h1",
@@ -134,6 +135,7 @@
       "text-white/85",
       "text-xl",
       "text-xs",
+      "theme-toggle-icon",
       "tracking-[0.16em]",
       "tracking-wide",
       "uppercase",
