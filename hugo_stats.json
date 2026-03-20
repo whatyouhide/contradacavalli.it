@@ -110,6 +110,7 @@
       "mt-auto",
       "mx-auto",
       "no-underline",
+      "object-center",
       "object-contain",
       "object-cover",
       "object-top",
