@@ -1,14 +1,14 @@
-<footer class="mt-auto pt-6 pb-6 border-t border-line text-muted text-[0.88rem] leading-normal">
+<footer class="animate-in mt-auto pt-6 pb-6 border-t border-line text-muted text-[0.88rem] leading-normal" style="--stagger:6">
   <div class="flex justify-between items-start gap-3 max-md:flex-col max-md:text-center max-md:items-center max-md:gap-3">
     <div>
       <h2 class="font-heading text-ink text-xl tracking-wide">Dove Siamo</h2>
       <p class="mt-1">
-        <a href="{{ site.Params.maps_url }}" target="_blank" rel="noopener">{{ site.Params.address }}</a>
+        <a class="underline decoration-line underline-offset-2 hover:text-ink transition-colors duration-200" href="{{ site.Params.maps_url }}" target="_blank" rel="noopener" aria-label="Apri mappa: {{ site.Params.address }}">{{ site.Params.address }}</a>
       </p>
     </div>
     <div class="flex flex-col items-end max-md:items-center gap-1">
-      <p><a class="text-ink no-underline" href="tel:{{ site.Params.contact_phone }}">{{ site.Params.contact_phone }}</a></p>
-      <p><a class="text-ink no-underline" href="mailto:{{ site.Params.contact_email }}">{{ site.Params.contact_email }}</a></p>
+      <p><a class="text-ink no-underline hover:underline transition-colors duration-200" href="tel:{{ site.Params.contact_phone }}">{{ site.Params.contact_phone }}</a></p>
+      <p><a class="text-ink no-underline hover:underline transition-colors duration-200" href="mailto:{{ site.Params.contact_email }}">{{ site.Params.contact_email }}</a></p>
       <p>&copy; {{ now.Year }} Contrada Cavalli</p>
     </div>
   </div>
