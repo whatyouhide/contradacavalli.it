@@ -28,6 +28,8 @@
     "classes": [
       "!p-3",
       "absolute",
+      "animate-fade",
+      "animate-in",
       "backdrop-blur-md",
       "bg-black/30",
       "border-line",
@@ -130,6 +132,7 @@
       "section",
       "self-center",
       "shadow-[0_20px_50px_rgba(23,21,19,0.08)]",
+      "sport-card",
       "sr-only",
       "text-2xl",
       "text-[0.85rem]",
