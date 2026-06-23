@@ -154,6 +154,41 @@
     transform: scale(1.06);
   }
 
+  .institutional-logo-panel {
+    @apply flex flex-wrap items-center justify-center gap-x-8 gap-y-5 px-5 py-5 border border-line;
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  .institutional-logo {
+    @apply block h-auto object-contain;
+    max-width: min(100%, 22rem);
+    max-height: 4.8rem;
+  }
+
+  .institutional-logo--sisma {
+    max-width: min(100%, 24rem);
+  }
+
+  .institutional-logo--next {
+    max-width: min(100%, 21rem);
+    max-height: 5.4rem;
+  }
+
+  @media (max-width: 639px) {
+    .institutional-logo-panel {
+      @apply gap-y-4 px-4 py-4;
+    }
+
+    .institutional-logo {
+      max-height: 4rem;
+    }
+
+    .institutional-logo--next {
+      max-height: 4.7rem;
+    }
+  }
+
   @keyframes fade-in {
     from { opacity: 0; }
     to   { opacity: 1; }
