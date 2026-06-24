@@ -70,8 +70,22 @@
             <img class="animate-fade h-7 w-auto object-contain dark:invert" src="/images/sponsors/distretto19.svg" alt="Distretto 19" loading="lazy" />
         </div>
     </div>
-    <div class="flex flex-col gap-4">
-        <p class="text-muted text-xs uppercase tracking-[0.16em] text-center">Loghi istituzionali</p>
+    <div class="pnc-disclosure">
+        <div class="pnc-project">
+            <div>
+                <p class="pnc-project__eyebrow">{{ site.Params.pnc_project.title }}</p>
+                <h2 class="pnc-project__title">{{ site.Params.pnc_project.program }}</h2>
+            </div>
+            <div class="pnc-project__content">
+                <p class="pnc-project__measure">{{ site.Params.pnc_project.measure }}</p>
+                <p class="pnc-project__description">{{ site.Params.pnc_project.description }}</p>
+                <div class="pnc-project__notes">
+                    <p>{{ site.Params.pnc_project.purpose }}</p>
+                    <p>{{ site.Params.pnc_project.result }}</p>
+                    <p class="pnc-project__cup"><span>CUP</span> {{ site.Params.pnc_project.cup }}</p>
+                </div>
+            </div>
+        </div>
         <div class="institutional-logo-panel">
             <img class="institutional-logo institutional-logo--comsisma" src="/images/institutional/comsisma-2016.svg" alt="Commissario Straordinario Ricostruzione Sisma 2016" loading="lazy" decoding="async" />
             <img class="institutional-logo institutional-logo--sisma" src="/images/institutional/sisma-2009.svg" alt="Presidenza del Consiglio dei Ministri - Struttura di Missione Sisma 2009" loading="lazy" decoding="async" />

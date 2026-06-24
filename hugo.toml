@@ -22,6 +22,15 @@ defaultContentLanguage = 'it'
     padel = 'Due campi coperti e riscaldati.'
     beach_volley = 'Campo outdoor, solo per il periodo estivo.'
 
+  [params.pnc_project]
+    title = 'Progetto finanziato'
+    program = 'Piano Nazionale Complementare - Next Appennino'
+    measure = 'Misura B1.3a'
+    description = 'Copertura di 2 campi da padel della struttura sportiva "Contrada Cavalli".'
+    purpose = 'Finalità: rendere utilizzabili i campi da padel anche in condizioni meteo avverse.'
+    result = 'Risultato: 2 campi da padel coperti.'
+    cup = 'C12I23000990008'
+
 [menus]
   [[menus.main]]
     name = 'Home'
